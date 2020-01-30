@@ -16,17 +16,12 @@ public class Game {
         this.endGameConditions = endGameConditions;
     }
 
-    public Game(Player player1, Player player2) {
-        return;
-    }
-
     public String[][] display() {
         return board.getBoard();
     }
 
 
     public void takeTurn() {
-
         Coordinates currentPlayerMove = this.currentPlayer.getMove();
         if (!isMoveValid(currentPlayerMove)) {
             return;
@@ -35,7 +30,6 @@ public class Game {
         if (isGameOver()) {
             return;
         }
-        ;
         this.changePlayer();
     }
 
@@ -44,14 +38,10 @@ public class Game {
             if (endGameCondition.isGameOver(board)) {
                 return true;
             }
-            ;
         }
         return false;
     }
 
-    private Player getCurrentPlayer() {
-        return currentPlayer;
-    }
 
     private void changePlayer() {
         if (currentPlayer == player1) {
@@ -61,8 +51,20 @@ public class Game {
         }
     }
 
-
     private boolean isMoveValid(Coordinates move) {
-        return true;
+        if (!isOutOfBounds(move) && isLocationEmpty(move)) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
+    private boolean isOutOfBounds(Coordinates move) {
+        return null;
+    }
+
+    public boolean isLocationEmpty(Coordinates move) {
+        return null;
+    }
+
 }

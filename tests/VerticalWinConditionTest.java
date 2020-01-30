@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class VerticalWinConditionTest {
 
     @Test
-    public void player1CanWinVerticallyWhen3PiecesAreIn3rdRow() {
+    public void player1CanWinVerticallyWhen3PiecesAreInCentreColumn() {
         Board board = new Board();
         board.addMove("X", new Coordinates(1,1));
         board.addMove("X", new Coordinates(2,1));
@@ -18,7 +18,7 @@ public class VerticalWinConditionTest {
     }
 
     @Test
-    public void cannotWinVerticallyWhenLessThan3PiecesAreIn3rdRow() {
+    public void cannotWinWhenLessThan3PiecesAreVertical() {
         Board board = new Board();
         board.addMove("X", new Coordinates(1,1));
         board.addMove("X", new Coordinates(2,1));
