@@ -1,6 +1,10 @@
+package core;
+
 public class VerticalWinCondition implements EndGameCondition {
     @Override
-    public boolean isGameOver(Board board, Player player) {
+    public boolean isGameOver(Board board) {
         return false;
     }
+
+
 }

@@ -1,3 +1,5 @@
+package core;
+
 import java.util.List;
 
 public class Game {
@@ -14,30 +16,35 @@ public class Game {
         this.endGameConditions = endGameConditions;
     }
 
-    public String display(){
-        return board.toString();
+    public Game(Player player1, Player player2) {
+        return;
+    }
+
+    public String[][] display() {
+        return board.getBoard();
     }
 
 
     public void takeTurn() {
-        //getcurrent Players move
+
         Coordinates currentPlayerMove = this.currentPlayer.getMove();
-        //check if the move is valid
-        if(!isMoveValid(currentPlayerMove)){return; }
-
-        //add the move to the board
+        if (!isMoveValid(currentPlayerMove)) {
+            return;
+        }
         this.board.addMove(currentPlayer.getPiece(), currentPlayerMove);
-        //check if the game is over
-        if (isGameOver()){return;};
-        //change player if move accepted and no winner
+        if (isGameOver()) {
+            return;
+        }
+        ;
         this.changePlayer();
-        //return current state
-
     }
 
     private boolean isGameOver() {
-        for(EndGameCondition endGameCondition :endGameConditions ){
-            if(endGameCondition.isGameOver(board,currentPlayer)){return true;};
+        for (EndGameCondition endGameCondition : endGameConditions) {
+            if (endGameCondition.isGameOver(board)) {
+                return true;
+            }
+            ;
         }
         return false;
     }
@@ -47,7 +54,13 @@ public class Game {
     }
 
     private void changePlayer() {
+        if (currentPlayer == player1) {
+            currentPlayer = player2;
+        } else {
+            currentPlayer = player1;
+        }
     }
+
 
     private boolean isMoveValid(Coordinates move) {
         return true;

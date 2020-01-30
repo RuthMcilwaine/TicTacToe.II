@@ -13,7 +13,7 @@ They are also an experimental bunch (so make sure they can only access methods y
     * Out of bounds of the grid is an invalid move
     * Placing a move in a square that is occupied is an invalid move.
 * There can be different types of players
-    * Human player
+    * consoleShell.Human player
     * Computer player (makes moves at random)
 * The requirements for the game end conditions are customizable. Initially these conditions will be:
     * A player occupies 3 squares in a row horizontally 
@@ -23,15 +23,15 @@ They are also an experimental bunch (so make sure they can only access methods y
 * When the game starts:
     * "Welcome to Tic Tac Toe!"
 * When a new game begins (where X is the first player):
-    * "New Game! First move: X"
+    * "New core.Game! First move: X"
 * When a player makes an invalid move the following message is shown:
     * "Incorrect move: X"
 * When a player has made a successful move the following message is displayed (with the next player to make a move) :
     * "Your move player: O" 
 * When a player has won the following message is displayed:
-    * "Game over! winning player: X" 
+    * "core.Game over! winning player: X" 
 * When the game is a draw:
-    * "Game over! No Winner!"
+    * "core.Game over! No Winner!"
 
 The requirements above are for the first release, you know the following is being considered for the future, but may not happen depending on the success of the game:
     * Localization (output messages will be translated for different languages)
