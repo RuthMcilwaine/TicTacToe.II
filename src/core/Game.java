@@ -3,7 +3,7 @@ package core;
 import java.util.List;
 
 public class Game {
-    Board board = new Board();
+    private Board board = new Board();
     private Player player1;
     private Player player2;
     private Player currentPlayer;
@@ -17,13 +17,13 @@ public class Game {
     }
 
     public String[][] display() {
-        return board.getBoard();
+        return board.getBoardCopy();
     }
 
 
     public void takeTurn() {
         Coordinates currentPlayerMove = this.currentPlayer.getMove();
-        if (!isMoveValid(currentPlayerMove)) {
+        if (!board.isMoveValid(currentPlayerMove)) {
             return;
         }
         this.board.addMove(currentPlayer.getPiece(), currentPlayerMove);
@@ -51,20 +51,5 @@ public class Game {
         }
     }
 
-    private boolean isMoveValid(Coordinates move) {
-        if (!isOutOfBounds(move) && isLocationEmpty(move)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private boolean isOutOfBounds(Coordinates move) {
-        return null;
-    }
-
-    public boolean isLocationEmpty(Coordinates move) {
-        return null;
-    }
 
 }

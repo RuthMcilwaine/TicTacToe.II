@@ -4,11 +4,11 @@ public class Coordinates {
     private int row;
     private int column;
 
-    public int getRow() {
+    int getRow() {
         return row;
     }
 
-    public int getColumn() {
+    int getColumn() {
         return column;
     }
 
