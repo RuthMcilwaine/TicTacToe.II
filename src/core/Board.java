@@ -39,7 +39,7 @@ public class Board {
     }
 
     private boolean isLocationEmpty(Coordinates move) {
-        return board[move.getColumn()][move.getRow()].contains(",");
+        return board[move.getRow()][move.getColumn()].contains(",");
     }
 
 }

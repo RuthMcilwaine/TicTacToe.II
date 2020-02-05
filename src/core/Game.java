@@ -22,7 +22,7 @@ public class Game {
 
 
     public void takeTurn() {
-        Coordinates currentPlayerMove = this.currentPlayer.getMove();
+        Coordinates currentPlayerMove = this.currentPlayer.getNextMove();
         if (!board.isMoveValid(currentPlayerMove)) {
             return;
         }

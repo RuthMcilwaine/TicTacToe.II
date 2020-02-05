@@ -17,7 +17,26 @@ class HorizontalWinConditionTest {
         board.addMove("X", new Coordinates(2,2));
         HorizontalWinCondition horizontalWinCondition = new HorizontalWinCondition();
         assertTrue(horizontalWinCondition.isGameOver(board));
+    }
 
+    @Test
+    void canWinHorizontallyWhen3PiecesAreIn2ndRow() {
+        Board board = new Board();
+        board.addMove("X", new Coordinates(1,1));
+        board.addMove("X", new Coordinates(1,0));
+        board.addMove("X", new Coordinates(1,2));
+        HorizontalWinCondition horizontalWinCondition = new HorizontalWinCondition();
+        assertTrue(horizontalWinCondition.isGameOver(board));
+    }
+
+    @Test
+    void canWinHorizontallyWhen3PiecesAreIn1stRow() {
+        Board board = new Board();
+        board.addMove("X", new Coordinates(0,1));
+        board.addMove("X", new Coordinates(0,0));
+        board.addMove("X", new Coordinates(0,2));
+        HorizontalWinCondition horizontalWinCondition = new HorizontalWinCondition();
+        assertTrue(horizontalWinCondition.isGameOver(board));
     }
 
     @Test

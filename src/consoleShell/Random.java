@@ -14,7 +14,7 @@ public class Random implements Player {
 
 
     @Override
-    public Coordinates getMove() {
+    public Coordinates getNextMove() {
         return move;
     }
 }

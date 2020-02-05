@@ -18,6 +18,26 @@ class VerticalWinConditionTest {
     }
 
     @Test
+    void player1CanWinVerticallyWhen3PiecesAreInRightColumn() {
+        Board board = new Board();
+        board.addMove("X", new Coordinates(1,2));
+        board.addMove("X", new Coordinates(2,2));
+        board.addMove("X", new Coordinates(0,2));
+        VerticalWinCondition verticalWinCondition = new VerticalWinCondition();
+        assertTrue(verticalWinCondition.isGameOver(board));
+    }
+
+    @Test
+    void player1CanWinVerticallyWhen3PiecesAreInLeftColumn() {
+        Board board = new Board();
+        board.addMove("X", new Coordinates(1,0));
+        board.addMove("X", new Coordinates(2,0));
+        board.addMove("X", new Coordinates(0,0));
+        VerticalWinCondition verticalWinCondition = new VerticalWinCondition();
+        assertTrue(verticalWinCondition.isGameOver(board));
+    }
+
+    @Test
     void cannotWinWhenLessThan3PiecesAreVertical() {
         Board board = new Board();
         board.addMove("X", new Coordinates(1,1));

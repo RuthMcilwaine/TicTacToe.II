@@ -13,7 +13,7 @@ public class Human implements Player {
     }
 
     @Override
-    public Coordinates getMove() {
+    public Coordinates getNextMove() {
         return moves;
     }
 }
