@@ -3,14 +3,15 @@ package core;
 public class Board {
 
     private String[][] board;
+    private int width = 3;
+    private int height = 3;
 
     public void addMove(String piece, Coordinates move) {
         board[move.getRow()][move.getColumn()] = piece;
     }
 
     public Board() {
-        int width = 3;
-        int height = 3;
+
         board = new String[width][height];
         for (int r = 0; r < width; r++) {
             for (int c = 0; c < height; c++) {
@@ -35,12 +36,27 @@ public class Board {
     }
 
     private boolean outOfBounds(Coordinates move) {
-        return move.getRow() > board.length || move.getColumn() > board.length;
+        boolean b = move.getRow() > board.length || move.getColumn() > board[0].length;
+        return b;
     }
 
     private boolean isLocationEmpty(Coordinates move) {
         return board[move.getRow()][move.getColumn()].contains(",");
     }
 
+    @Override
+    public String toString() {
+        String boardString = "\n";
+
+        for (int r = 0; r < width; r++) {
+            boardString += "| ";
+            for (int c = 0; c < height; c++) {
+                String s = board[r][c];
+                boardString += s + " | ";
+            }
+            boardString += "\n";
+        }
+        return boardString;
+    }
 }
 

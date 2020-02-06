@@ -20,6 +20,9 @@ public class Game {
         return board.getBoardCopy();
     }
 
+    public String displayGameBoard() {
+        return board.toString();
+    }
 
     public void takeTurn() {
         Coordinates currentPlayerMove = this.currentPlayer.getNextMove();
@@ -33,7 +36,9 @@ public class Game {
         this.changePlayer();
     }
 
-    private boolean isGameOver() {
+    public boolean isGameOver() {
+//        endGameConditions.listIterator().next();
+//        endGameConditions[0];
         for (EndGameCondition endGameCondition : endGameConditions) {
             if (endGameCondition.isGameOver(board)) {
                 return true;
@@ -51,5 +56,7 @@ public class Game {
         }
     }
 
-
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
 }
