@@ -44,19 +44,5 @@ public class Board {
         return board[move.getRow()][move.getColumn()].contains(",");
     }
 
-    @Override
-    public String toString() {
-        String boardString = "\n";
-
-        for (int r = 0; r < width; r++) {
-            boardString += "| ";
-            for (int c = 0; c < height; c++) {
-                String s = board[r][c];
-                boardString += s + " | ";
-            }
-            boardString += "\n";
-        }
-        return boardString;
-    }
 }
 
